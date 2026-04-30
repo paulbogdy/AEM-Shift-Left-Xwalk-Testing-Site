@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p197706-e2043054.adobeaemcloud.com/bin/franklin.delivery/adobe-rnd/aem-boilerplate-xwalk/main"
+    url: "https://author-p197706-e2043054.adobeaemcloud.com/bin/franklin.delivery/adobe-rnd/aem-shift-left-testing/main"
     type: "markup"
     suffix: ".html"

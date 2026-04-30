@@ -15,7 +15,14 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "teaser",
+      "accordion",
+      "quote",
+      "cta",
+      "list",
+      "pricing",
+      "banner"
     ]
   },
   {
@@ -37,6 +44,24 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "list",
+    "components": [
+      "list-item"
+    ]
+  },
+  {
+    "id": "pricing",
+    "components": [
+      "pricing-item"
     ]
   }
 ]

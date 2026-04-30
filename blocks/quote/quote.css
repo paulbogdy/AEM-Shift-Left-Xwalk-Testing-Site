@@ -1,0 +1,69 @@
+.quote {
+  background-color: var(--light-color, #f8f8f8);
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.quote > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .quote > div {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.quote .quote-image {
+  flex-shrink: 0;
+}
+
+.quote .quote-image picture,
+.quote .quote-image img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.quote .quote-body {
+  flex: 1;
+}
+
+.quote blockquote {
+  position: relative;
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.quote blockquote::before {
+  content: '\201C';
+  font-size: 4rem;
+  line-height: 0;
+  vertical-align: -1rem;
+  color: var(--link-color);
+  margin-right: 4px;
+}
+
+.quote .quote-author {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+.quote .quote-role {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}

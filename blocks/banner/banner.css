@@ -1,0 +1,74 @@
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--link-color, #0066cc);
+  color: #fff;
+  padding: 10px 48px;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.banner > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.banner p {
+  margin: 0;
+  color: #fff;
+}
+
+.banner a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.banner a:hover {
+  text-decoration: none;
+}
+
+.banner-close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+}
+
+.banner-close:hover {
+  opacity: 1;
+}
+
+/* Warning variant */
+.banner.warning {
+  background-color: #f59e0b;
+  color: #1a1a1a;
+}
+
+.banner.warning p,
+.banner.warning a,
+.banner.warning .banner-close {
+  color: #1a1a1a;
+}
+
+/* Success variant */
+.banner.success {
+  background-color: #16a34a;
+  color: #fff;
+}

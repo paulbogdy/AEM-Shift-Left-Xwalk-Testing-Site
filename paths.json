@@ -1,8 +1,8 @@
 {
   "mappings": [
-    "/content/aem-frescopa/:/"
+    "/content/aem-shift-left-testing/:/"
   ],
   "includes": [
-    "/content/aem-frescopa/"
+    "/content/aem-shift-left-testing/"
   ]
 }
