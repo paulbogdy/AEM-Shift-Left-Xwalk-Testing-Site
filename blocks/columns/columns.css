@@ -1,10 +1,12 @@
+.columns {
+  padding: 56px 24px;
+}
+
+/* ── Mobile: stack vertically, image on top ── */
 .columns > div {
   display: flex;
   flex-direction: column;
-}
-
-.columns img {
-  width: 100%;
+  gap: 32px;
 }
 
 .columns > div > div {
@@ -15,19 +17,130 @@
   order: 0;
 }
 
-.columns > div > .columns-img-col img {
-  display: block;
+/* ─────────────────────────────────────────────
+   Image column
+───────────────────────────────────────────── */
+.columns-img-col {
+  position: relative;
 }
 
+.columns-img-col picture {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 20px 56px rgba(0, 0, 0, 0.1);
+}
+
+.columns-img-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Decorative blob behind the image */
+.columns-img-col::after {
+  content: '';
+  position: absolute;
+  inset: 12px -12px -12px 12px;
+  border-radius: 20px;
+  background: rgba(59, 99, 251, 0.07);
+  z-index: -1;
+}
+
+/* ─────────────────────────────────────────────
+   Text column
+───────────────────────────────────────────── */
+.columns-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.columns-text-col h1,
+.columns-text-col h2,
+.columns-text-col h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.columns-text-col p {
+  line-height: 1.7;
+  color: var(--dark-color);
+  margin: 0 0 14px;
+}
+
+.columns-text-col p:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline eyebrow — short all-caps <p> before the heading */
+.columns-text-col p:first-child:not(:last-child) {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--link-color);
+  margin-bottom: 10px;
+}
+
+/* ─────────────────────────────────────────────
+   3-column: feature grid
+───────────────────────────────────────────── */
+.columns-3-cols > div > .columns-text-col {
+  background: var(--light-color);
+  border-radius: 16px;
+  padding: 28px 24px;
+  gap: 0;
+}
+
+.columns-3-cols > div > .columns-text-col h3 {
+  font-size: 1.125rem;
+  margin-bottom: 8px;
+}
+
+.columns-3-cols > div > .columns-text-col p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* ─────────────────────────────────────────────
+   Desktop: side by side
+───────────────────────────────────────────── */
 @media (width >= 900px) {
+  .columns {
+    padding: 80px 32px;
+  }
+
   .columns > div {
+    flex-direction: row;
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    gap: 64px;
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
   }
+
+  /* Image column slightly wider than text in a 2-col layout */
+  .columns-2-cols > div > .columns-img-col {
+    flex: 0 0 52%;
+  }
+
+  /* 3-col: tighter gap, top-align */
+  .columns-3-cols > div {
+    align-items: flex-start;
+    gap: 28px;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Highlight section variant (section metadata)
+───────────────────────────────────────────── */
+.section.highlight .columns-text-col {
+  color: var(--text-color);
 }
