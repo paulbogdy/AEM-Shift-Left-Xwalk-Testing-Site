@@ -8,12 +8,22 @@
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
+  border: 1px solid var(--overlay-color, #dadada);
+  border-radius: 8px;
   background-color: var(--background-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .cards .cards-card-body {
   margin: 16px;
+  flex: 1;
+}
+
+/* Top padding when the body is the first child (no image above it) */
+.cards > ul > li:not(:has(.cards-card-image)) .cards-card-body {
+  padding-top: 4px;
 }
 
 .cards .cards-card-image {
