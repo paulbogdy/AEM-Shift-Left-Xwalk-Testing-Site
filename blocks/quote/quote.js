@@ -6,44 +6,34 @@ export default function decorate(block) {
   if (!row) return;
 
   const cells = [...row.children];
-  const imageCell = cells[0];
-  const bodyCell = cells[1];
+
+  // Determine layout: if first cell has a picture it's the portrait, otherwise single-cell body
+  const firstCellHasPicture = cells[0]?.querySelector('picture');
+  const imageCell = (cells.length >= 2 || firstCellHasPicture) && firstCellHasPicture ? cells[0] : null;
+  const bodyCell = imageCell ? cells[1] : cells[0];
+
+  if (!bodyCell) return;
 
   if (imageCell) {
-    const picture = imageCell.querySelector('picture');
-    if (picture) {
-      imageCell.classList.add('quote-image');
-      const img = picture.querySelector('img');
-      if (img) {
-        const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '160' }]);
-        moveInstrumentation(img, optimized.querySelector('img'));
-        picture.replaceWith(optimized);
-      }
-    } else {
-      // No image — move any text content to body
-      if (bodyCell) {
-        bodyCell.prepend(...imageCell.childNodes);
-      }
-      imageCell.remove();
+    imageCell.classList.add('quote-image');
+    const img = imageCell.querySelector('picture img');
+    if (img) {
+      const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '160' }]);
+      moveInstrumentation(img, optimized.querySelector('img'));
+      img.closest('picture').replaceWith(optimized);
     }
   }
 
-  if (bodyCell) {
-    bodyCell.classList.add('quote-body');
-    const paragraphs = [...bodyCell.querySelectorAll('p')];
+  bodyCell.classList.add('quote-body');
+  const paragraphs = [...bodyCell.querySelectorAll('p')];
 
-    if (paragraphs[0]) {
-      const blockquote = document.createElement('blockquote');
-      blockquote.innerHTML = paragraphs[0].innerHTML;
-      paragraphs[0].replaceWith(blockquote);
-    }
-
-    if (paragraphs[1]) {
-      paragraphs[1].classList.add('quote-author');
-    }
-
-    if (paragraphs[2]) {
-      paragraphs[2].classList.add('quote-role');
-    }
+  if (paragraphs[0]) {
+    const blockquote = document.createElement('blockquote');
+    moveInstrumentation(paragraphs[0], blockquote);
+    blockquote.innerHTML = paragraphs[0].innerHTML;
+    paragraphs[0].replaceWith(blockquote);
   }
+
+  if (paragraphs[1]) paragraphs[1].classList.add('quote-author');
+  if (paragraphs[2]) paragraphs[2].classList.add('quote-role');
 }

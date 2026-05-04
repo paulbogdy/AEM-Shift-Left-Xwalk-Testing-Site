@@ -15,7 +15,7 @@ export default function decorate(block) {
     if (picture) {
       const img = picture.querySelector('img');
       if (img) {
-        const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '600' }]);
+        const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '800' }]);
         moveInstrumentation(img, optimized.querySelector('img'));
         picture.replaceWith(optimized);
       }
@@ -25,16 +25,28 @@ export default function decorate(block) {
   if (bodyCell) {
     bodyCell.classList.add('teaser-body');
 
-    // First non-empty <p> that has no block-level children = eyebrow label
+    const heading = bodyCell.querySelector('h1, h2, h3, h4');
     const paragraphs = [...bodyCell.querySelectorAll('p')];
-    const firstPara = paragraphs.find((p) => p.textContent.trim().length > 0 && !p.querySelector('a'));
-    if (firstPara) {
-      firstPara.classList.add('teaser-eyebrow');
-    }
 
-    // Any <a> in a standalone <p> gets button class for CTA decoration
-    bodyCell.querySelectorAll('p > a').forEach((a) => {
-      a.classList.add('button');
+    // Eyebrow: first short <p> that appears before the heading, with no links
+    const eyebrow = paragraphs.find((p) => {
+      const text = p.textContent.trim();
+      if (!text || text.length > 80 || p.querySelector('a')) return false;
+      if (!heading) return false;
+      // p must come before the heading in DOM order
+      return !!(p.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_FOLLOWING);
+    });
+    if (eyebrow) eyebrow.classList.add('teaser-eyebrow');
+
+    // CTA links: decorate standalone <p><a> as buttons
+    paragraphs.forEach((p) => {
+      const links = [...p.querySelectorAll('a')];
+      if (links.length && p.textContent.trim() === links.map((a) => a.textContent).join('')) {
+        links.forEach((a, i) => {
+          a.classList.add('button', i === 0 ? 'primary' : 'secondary');
+        });
+        p.classList.add('button-container');
+      }
     });
   }
 }

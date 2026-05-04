@@ -1,22 +1,20 @@
 .quote {
-  background-color: var(--light-color, #f8f8f8);
-  padding: 48px 24px;
-  text-align: center;
+  background-color: var(--light-color);
+  padding: 56px 24px;
 }
 
 .quote > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .quote > div {
     flex-direction: row;
-    text-align: left;
   }
 }
 
@@ -31,6 +29,8 @@
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid var(--background-color);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 
 .quote .quote-body {
@@ -45,25 +45,41 @@
   color: var(--text-color);
   margin: 0 0 16px;
   padding: 0;
+  border: none;
 }
 
 .quote blockquote::before {
   content: '\201C';
+  font-family: Georgia, serif;
   font-size: 4rem;
   line-height: 0;
   vertical-align: -1rem;
   color: var(--link-color);
   margin-right: 4px;
+  opacity: 0.5;
 }
 
 .quote .quote-author {
   font-weight: 700;
   font-size: 1rem;
   margin: 0 0 4px;
+  color: var(--text-color);
 }
 
 .quote .quote-role {
   font-size: 0.875rem;
-  color: #666;
+  color: var(--dark-color);
   margin: 0;
+}
+
+@media (width >= 900px) {
+  .quote {
+    padding: 80px 32px;
+  }
+
+  .quote .quote-image picture,
+  .quote .quote-image img {
+    width: 96px;
+    height: 96px;
+  }
 }

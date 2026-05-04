@@ -1,67 +1,16 @@
 [
-  {
-    "id": "main",
-    "components": [
-      "section"
-    ]
-  },
+  { "id": "main", "components": ["section"] },
   {
     "id": "section",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
-      "fragment",
-      "teaser",
-      "accordion",
-      "quote",
-      "cta",
-      "list",
-      "pricing",
-      "banner"
-    ]
+    "components": ["text", "image", "button", "title", "hero", "cards", "columns", "teaser", "accordion", "quote", "cta", "list", "pricing", "banner", "tabs", "stats", "profiles", "fragment"]
   },
-  {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id": "accordion",
-    "components": [
-      "accordion-item"
-    ]
-  },
-  {
-    "id": "list",
-    "components": [
-      "list-item"
-    ]
-  },
-  {
-    "id": "pricing",
-    "components": [
-      "pricing-item"
-    ]
-  }
+  { "id": "cards", "components": ["card"] },
+  { "id": "columns", "components": ["column"] },
+  { "id": "column", "components": ["text", "image", "button", "title"] },
+  { "id": "accordion", "components": ["accordion-item"] },
+  { "id": "list", "components": ["list-item"] },
+  { "id": "pricing", "components": ["pricing-item"] },
+  { "id": "tabs", "components": ["tab-item"] },
+  { "id": "stats", "components": ["stat-item"] },
+  { "id": "profiles", "components": ["profile-item"] }
 ]

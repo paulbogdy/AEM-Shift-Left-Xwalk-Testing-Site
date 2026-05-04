@@ -2,419 +2,174 @@
   {
     "id": "page-metadata",
     "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "jcr:title",
-        "label": "Title"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "jcr:description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "keywords",
-        "multi": true,
-        "label": "Keywords"
-      }
+      { "component": "text", "valueType": "string", "name": "jcr:title", "label": "Title" },
+      { "component": "text", "valueType": "string", "name": "jcr:description", "label": "Description" },
+      { "component": "text", "valueType": "string", "name": "keywords", "multi": true, "label": "Keywords" }
     ]
   },
   {
     "id": "image",
     "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text"
-      }
+      { "component": "reference", "name": "image", "label": "Image", "multi": false },
+      { "component": "text", "name": "imageAlt", "label": "Alt Text" }
     ]
   },
   {
     "id": "title",
     "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
-          { "name": "h1", "value": "h1" },
-          { "name": "h2", "value": "h2" },
-          { "name": "h3", "value": "h3" },
-          { "name": "h4", "value": "h4" },
-          { "name": "h5", "value": "h5" },
-          { "name": "h6", "value": "h6" }
-        ]
-      }
+      { "component": "text", "name": "title", "label": "Title" },
+      { "component": "select", "name": "titleType", "label": "Title Type", "options": [
+        { "name": "h1", "value": "h1" }, { "name": "h2", "value": "h2" }, { "name": "h3", "value": "h3" },
+        { "name": "h4", "value": "h4" }, { "name": "h5", "value": "h5" }, { "name": "h6", "value": "h6" }
+      ]}
     ]
   },
   {
     "id": "button",
     "fields": [
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "linkText",
-        "label": "Text"
-      },
-      {
-        "component": "text",
-        "name": "linkTitle",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "linkType",
-        "label": "Type",
-        "options": [
-          { "name": "default", "value": "" },
-          { "name": "primary", "value": "primary" },
-          { "name": "secondary", "value": "secondary" }
-        ]
-      }
+      { "component": "aem-content", "name": "link", "label": "Link" },
+      { "component": "text", "name": "linkText", "label": "Text" },
+      { "component": "text", "name": "linkTitle", "label": "Title" },
+      { "component": "select", "name": "linkType", "label": "Type", "options": [
+        { "name": "default", "value": "" }, { "name": "primary", "value": "primary" }, { "name": "secondary", "value": "secondary" }
+      ]}
     ]
   },
   {
     "id": "section",
     "fields": [
-      {
-        "component": "text",
-        "name": "name",
-        "label": "Section Name",
-        "description": "The label shown for this section in the Content Tree"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          { "name": "Highlight", "value": "highlight" }
-        ]
-      }
+      { "component": "text", "name": "name", "label": "Section Name", "description": "The label shown for this section in the Content Tree" },
+      { "component": "multiselect", "name": "style", "label": "Style", "options": [{ "name": "Highlight", "value": "highlight" }] }
     ]
   },
   {
     "id": "card",
     "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
+      { "component": "reference", "valueType": "string", "name": "image", "label": "Image", "multi": false },
+      { "component": "richtext", "name": "text", "value": "", "label": "Text", "valueType": "string" }
     ]
   },
   {
     "id": "columns",
     "fields": [
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
-      }
+      { "component": "text", "valueType": "number", "name": "columns", "value": "", "label": "Columns" },
+      { "component": "text", "valueType": "number", "name": "rows", "value": "", "label": "Rows" }
     ]
   },
   {
     "id": "fragment",
     "fields": [
-      {
-        "component": "aem-content",
-        "name": "reference",
-        "label": "Reference"
-      }
+      { "component": "aem-content", "name": "reference", "label": "Reference" }
     ]
   },
   {
     "id": "hero",
     "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
+      { "component": "reference", "valueType": "string", "name": "image", "label": "Image", "multi": false },
+      { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Alt", "value": "" },
+      { "component": "richtext", "name": "text", "value": "", "label": "Text", "valueType": "string" }
     ]
   },
   {
     "id": "teaser",
     "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Image Alt Text"
-      },
-      {
-        "component": "text",
-        "name": "eyebrow",
-        "label": "Eyebrow Label"
-      },
-      {
-        "component": "text",
-        "name": "heading",
-        "label": "Heading"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "label": "Body Text",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "ctaText",
-        "label": "CTA Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "ctaLink",
-        "label": "CTA Link"
-      },
-      {
-        "component": "select",
-        "name": "ctaStyle",
-        "label": "CTA Style",
-        "options": [
-          { "name": "Primary", "value": "primary" },
-          { "name": "Secondary", "value": "secondary" },
-          { "name": "Default", "value": "default" }
-        ]
-      }
+      { "component": "reference", "valueType": "string", "name": "image", "label": "Image", "multi": false },
+      { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt Text" },
+      { "component": "text", "valueType": "string", "name": "eyebrow", "label": "Eyebrow Label" },
+      { "component": "text", "valueType": "string", "name": "heading", "label": "Heading" },
+      { "component": "richtext", "valueType": "string", "name": "text", "label": "Body Text" },
+      { "component": "text", "valueType": "string", "name": "ctaText", "label": "CTA Label" },
+      { "component": "aem-content", "valueType": "string", "name": "ctaLink", "label": "CTA Link" },
+      { "component": "select", "valueType": "string", "name": "ctaStyle", "label": "CTA Style", "options": [
+        { "name": "Primary", "value": "primary" }, { "name": "Secondary", "value": "secondary" }, { "name": "Default", "value": "" }
+      ]}
     ]
   },
   {
     "id": "accordion-item",
     "fields": [
-      {
-        "component": "text",
-        "name": "question",
-        "label": "Question"
-      },
-      {
-        "component": "richtext",
-        "name": "answer",
-        "label": "Answer",
-        "valueType": "string"
-      }
+      { "component": "text", "valueType": "string", "name": "question", "label": "Question" },
+      { "component": "richtext", "valueType": "string", "name": "answer", "label": "Answer" }
     ]
   },
   {
     "id": "quote",
     "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Portrait Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Image Alt Text"
-      },
-      {
-        "component": "richtext",
-        "name": "quote",
-        "label": "Quote Text",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "author",
-        "label": "Author Name"
-      },
-      {
-        "component": "text",
-        "name": "role",
-        "label": "Author Role / Company"
-      }
+      { "component": "reference", "valueType": "string", "name": "image", "label": "Portrait Photo", "multi": false },
+      { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Photo Alt Text" },
+      { "component": "richtext", "valueType": "string", "name": "quote", "label": "Quote Text" },
+      { "component": "text", "valueType": "string", "name": "author", "label": "Author Name" },
+      { "component": "text", "valueType": "string", "name": "role", "label": "Author Role & Company" }
     ]
   },
   {
     "id": "cta",
     "fields": [
-      {
-        "component": "text",
-        "name": "heading",
-        "label": "Heading"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "label": "Supporting Text",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "primaryCtaText",
-        "label": "Primary CTA Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "primaryCtaLink",
-        "label": "Primary CTA Link"
-      },
-      {
-        "component": "text",
-        "name": "secondaryCtaText",
-        "label": "Secondary CTA Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "secondaryCtaLink",
-        "label": "Secondary CTA Link"
-      },
-      {
-        "component": "select",
-        "name": "variant",
-        "label": "Variant",
-        "options": [
-          { "name": "Default", "value": "default" },
-          { "name": "Dark", "value": "dark" },
-          { "name": "Light", "value": "light" }
-        ]
-      }
+      { "component": "text", "valueType": "string", "name": "heading", "label": "Heading" },
+      { "component": "richtext", "valueType": "string", "name": "text", "label": "Supporting Text" },
+      { "component": "text", "valueType": "string", "name": "primaryCtaText", "label": "Primary CTA Label" },
+      { "component": "aem-content", "valueType": "string", "name": "primaryCtaLink", "label": "Primary CTA Link" },
+      { "component": "text", "valueType": "string", "name": "secondaryCtaText", "label": "Secondary CTA Label" },
+      { "component": "aem-content", "valueType": "string", "name": "secondaryCtaLink", "label": "Secondary CTA Link" },
+      { "component": "select", "valueType": "string", "name": "variant", "label": "Variant", "options": [
+        { "name": "Default (Blue)", "value": "" }, { "name": "Dark", "value": "dark" }, { "name": "Light", "value": "light" }
+      ]}
     ]
   },
   {
     "id": "list-item",
     "fields": [
-      {
-        "component": "text",
-        "name": "icon",
-        "label": "Icon (emoji or text)"
-      },
-      {
-        "component": "text",
-        "name": "heading",
-        "label": "Item Heading"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "label": "Item Description",
-        "valueType": "string"
-      }
+      { "component": "text", "valueType": "string", "name": "icon", "label": "Icon (emoji or symbol)" },
+      { "component": "text", "valueType": "string", "name": "heading", "label": "Item Heading" },
+      { "component": "richtext", "valueType": "string", "name": "text", "label": "Item Description" }
     ]
   },
   {
     "id": "pricing-item",
     "fields": [
-      {
-        "component": "text",
-        "name": "tierName",
-        "label": "Tier Name"
-      },
-      {
-        "component": "text",
-        "name": "price",
-        "label": "Price (e.g. $79/mo)"
-      },
-      {
-        "component": "text",
-        "name": "period",
-        "label": "Billing Period"
-      },
-      {
-        "component": "richtext",
-        "name": "features",
-        "label": "Features List",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "ctaText",
-        "label": "CTA Button Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "ctaLink",
-        "label": "CTA Link"
-      },
-      {
-        "component": "checkbox",
-        "name": "featured",
-        "label": "Featured / Most Popular",
-        "valueType": "boolean"
-      }
+      { "component": "text", "valueType": "string", "name": "tierName", "label": "Tier Name" },
+      { "component": "text", "valueType": "string", "name": "price", "label": "Price" },
+      { "component": "text", "valueType": "string", "name": "period", "label": "Billing Period" },
+      { "component": "richtext", "valueType": "string", "name": "features", "label": "Feature List" },
+      { "component": "text", "valueType": "string", "name": "ctaText", "label": "CTA Label" },
+      { "component": "aem-content", "valueType": "string", "name": "ctaLink", "label": "CTA Link" },
+      { "component": "checkbox", "valueType": "boolean", "name": "featured", "label": "Featured (highlighted) tier" }
     ]
   },
   {
     "id": "banner",
     "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "label": "Banner Text",
-        "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "variant",
-        "label": "Variant",
-        "options": [
-          { "name": "Default", "value": "default" },
-          { "name": "Warning", "value": "warning" },
-          { "name": "Success", "value": "success" }
-        ]
-      }
+      { "component": "richtext", "valueType": "string", "name": "text", "label": "Banner Text" },
+      { "component": "select", "valueType": "string", "name": "variant", "label": "Variant", "options": [
+        { "name": "Info (Blue)", "value": "" }, { "name": "Warning (Amber)", "value": "warning" }, { "name": "Success (Green)", "value": "success" }
+      ]}
+    ]
+  },
+  {
+    "id": "tab-item",
+    "fields": [
+      { "component": "text", "valueType": "string", "name": "label", "label": "Tab Label" },
+      { "component": "richtext", "valueType": "string", "name": "content", "label": "Content" }
+    ]
+  },
+  {
+    "id": "stat-item",
+    "fields": [
+      { "component": "text", "valueType": "string", "name": "value", "label": "Value", "description": "e.g. 10,000+ or 99.9%" },
+      { "component": "text", "valueType": "string", "name": "label", "label": "Label" },
+      { "component": "text", "valueType": "string", "name": "description", "label": "Description" }
+    ]
+  },
+  {
+    "id": "profile-item",
+    "fields": [
+      { "component": "reference", "valueType": "string", "name": "image", "label": "Photo", "multi": false },
+      { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Photo Alt Text" },
+      { "component": "text", "valueType": "string", "name": "name", "label": "Full Name" },
+      { "component": "text", "valueType": "string", "name": "jobTitle", "label": "Job Title" },
+      { "component": "text", "valueType": "string", "name": "department", "label": "Department" },
+      { "component": "richtext", "valueType": "string", "name": "bio", "label": "Bio" },
+      { "component": "aem-content", "valueType": "string", "name": "linkedinUrl", "label": "LinkedIn URL" }
     ]
   }
 ]
