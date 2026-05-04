@@ -1,9 +1,14 @@
+.cta-container .cta-wrapper {
+  padding: 0;
+}
+
 .cta {
   background-color: var(--link-color, #0066cc);
   color: #fff;
   text-align: center;
   padding: 48px 24px;
   width: 100%;
+  border-radius: 24px;
 }
 
 .cta > div {
@@ -37,7 +42,7 @@
 .cta a.button {
   display: inline-block;
   padding: 12px 28px;
-  border-radius: 4px;
+  border-radius: 100px;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -128,7 +133,7 @@
 
 @media (min-width: 900px) {
   .cta {
-    padding: 64px 32px;
+    padding: 64px 40px;
   }
 
   .cta h2,

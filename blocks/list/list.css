@@ -5,7 +5,7 @@
 }
 
 .list {
-  padding: 40px 24px;
+  padding: 40px 0;
 }
 
 .list-items {
@@ -64,6 +64,6 @@
 
 @media (min-width: 900px) {
   .list {
-    padding: 64px 32px;
+    padding: 64px 0;
   }
 }

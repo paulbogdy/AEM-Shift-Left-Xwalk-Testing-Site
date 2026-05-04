@@ -1,5 +1,5 @@
 .tabs {
-  padding: 40px 24px;
+  padding: 40px 0;
 }
 
 .tabs-nav {
@@ -66,6 +66,6 @@
 
 @media (width >= 900px) {
   .tabs {
-    padding: 64px 32px;
+    padding: 64px 0;
   }
 }

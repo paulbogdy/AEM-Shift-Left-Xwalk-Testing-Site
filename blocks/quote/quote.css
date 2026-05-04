@@ -1,6 +1,11 @@
+.quote-container .quote-wrapper {
+  padding: 0;
+}
+
 .quote {
   background-color: var(--light-color);
   padding: 56px 24px;
+  border-radius: 24px;
 }
 
 .quote > div {

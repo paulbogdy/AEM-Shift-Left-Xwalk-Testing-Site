@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 40px 24px;
+  padding: 40px 0;
 }
 
 .teaser .teaser-image {
@@ -51,7 +51,7 @@
 .teaser .teaser-body p > a.button {
   display: inline-block;
   padding: 10px 24px;
-  border-radius: 4px;
+  border-radius: 100px;
   font-weight: 600;
   text-decoration: none;
   background-color: var(--link-color);
@@ -68,7 +68,7 @@
     flex-direction: row;
     align-items: center;
     gap: 48px;
-    padding: 64px 32px;
+    padding: 64px 0;
   }
 
   .teaser .teaser-image {

@@ -1,5 +1,6 @@
+/* Remove section's horizontal padding so hero sits flush at 1200px,
+   consistent with other full-width blocks like stats. */
 .hero-container .hero-wrapper {
-  max-width: unset;
   padding: 0;
 }
 
