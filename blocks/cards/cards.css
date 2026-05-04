@@ -19,11 +19,23 @@
 .cards .cards-card-body {
   margin: 16px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Top padding when the body is the first child (no image above it) */
+/* No-image cards: top accent bar + consistent padding so they don't look broken */
+.cards > ul > li:not(:has(.cards-card-image)) {
+  border-top: 3px solid var(--link-color);
+}
+
 .cards > ul > li:not(:has(.cards-card-image)) .cards-card-body {
-  padding-top: 4px;
+  padding-top: 8px;
+}
+
+/* Pin the CTA link to the bottom of the card regardless of description length */
+.cards .cards-card-body p:has(> a):last-child {
+  margin-top: auto;
+  padding-top: 12px;
 }
 
 .cards .cards-card-image {
