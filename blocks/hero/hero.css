@@ -1,6 +1,6 @@
-/* Remove section's horizontal padding so hero sits flush at 1200px,
-   consistent with other full-width blocks like stats. */
+/* Hero breaks out of the section's 1200px constraint to fill the viewport. */
 .hero-container .hero-wrapper {
+  max-width: unset;
   padding: 0;
 }
 

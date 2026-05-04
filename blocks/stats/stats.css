@@ -1,8 +1,3 @@
-/* Remove section's horizontal padding — stats manages its own as a card. */
-.stats-container .stats-wrapper {
-  padding: 0;
-}
-
 .stats {
   padding: 56px 24px;
   background: linear-gradient(135deg, #eef2ff 0%, #e8edff 100%);

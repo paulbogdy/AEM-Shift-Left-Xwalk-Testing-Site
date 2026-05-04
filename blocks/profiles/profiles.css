@@ -1,5 +1,5 @@
 .profiles {
-  padding: 56px 0;
+  padding: 56px 24px;
 }
 
 .profiles-grid {
@@ -104,6 +104,6 @@
 
 @media (width >= 900px) {
   .profiles {
-    padding: 80px 0;
+    padding: 80px 32px;
   }
 }

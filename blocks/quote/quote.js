@@ -9,13 +9,15 @@ export default function decorate(block) {
 
   // Model field order: image(0) | imageAlt(1) | quote(2) | author(3) | role(4)
   // imageAlt is already baked into the img element by AEM — skip cells[1].
-  // For shorter delivery (no image fields), fall back gracefully.
-  const hasModelFields = cells.length >= 3;
+  // When no image is set AEM delivers only 3 cells (quote|author|role), not 5.
+  // Use cells.length >= 5 to distinguish the two cases — not >= 3, which
+  // would incorrectly map cells[2] to role when no image is present.
+  const hasImageFields = cells.length >= 5;
 
-  const imageCell = hasModelFields ? cells[0] : null;
-  const quoteCell = hasModelFields ? cells[2] : cells[0];
-  const authorCell = hasModelFields ? cells[3] : cells[1];
-  const roleCell = hasModelFields ? cells[4] : cells[2];
+  const imageCell = hasImageFields ? cells[0] : null;
+  const quoteCell = hasImageFields ? cells[2] : cells[0];
+  const authorCell = hasImageFields ? cells[3] : cells[1];
+  const roleCell = hasImageFields ? cells[4] : cells[2];
 
   if (!quoteCell?.textContent.trim() && !quoteCell?.querySelector('*')) return;
 

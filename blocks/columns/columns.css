@@ -1,6 +1,5 @@
 .columns {
-  /* Section wrapper already provides horizontal padding — only add vertical here. */
-  padding: 56px 0;
+  padding: 56px 24px;
 }
 
 /* ── Mobile: stack vertically, image on top ── */
@@ -113,7 +112,7 @@
 ───────────────────────────────────────────── */
 @media (width >= 900px) {
   .columns {
-    padding: 80px 0;
+    padding: 80px 32px;
   }
 
   .columns > div {
