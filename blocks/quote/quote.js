@@ -7,14 +7,21 @@ export default function decorate(block) {
 
   const cells = [...row.children];
 
-  // Determine layout: if first cell has a picture it's the portrait, otherwise single-cell body
-  const firstCellHasPicture = cells[0]?.querySelector('picture');
-  const imageCell = (cells.length >= 2 || firstCellHasPicture) && firstCellHasPicture ? cells[0] : null;
-  const bodyCell = imageCell ? cells[1] : cells[0];
+  // Model field order: image(0) | imageAlt(1) | quote(2) | author(3) | role(4)
+  // imageAlt is already baked into the img element by AEM — skip cells[1].
+  // For shorter delivery (no image fields), fall back gracefully.
+  const hasModelFields = cells.length >= 3;
 
-  if (!bodyCell) return;
+  const imageCell = hasModelFields ? cells[0] : null;
+  const quoteCell = hasModelFields ? cells[2] : cells[0];
+  const authorCell = hasModelFields ? cells[3] : cells[1];
+  const roleCell = hasModelFields ? cells[4] : cells[2];
 
-  if (imageCell) {
+  if (!quoteCell?.textContent.trim() && !quoteCell?.querySelector('*')) return;
+
+  // Portrait image — only use if the cell actually contains a picture
+  const hasPicture = imageCell?.querySelector('picture');
+  if (hasPicture) {
     imageCell.classList.add('quote-image');
     const img = imageCell.querySelector('picture img');
     if (img) {
@@ -24,16 +31,37 @@ export default function decorate(block) {
     }
   }
 
-  bodyCell.classList.add('quote-body');
-  const paragraphs = [...bodyCell.querySelectorAll('p')];
+  // Build the quote body div
+  const body = document.createElement('div');
+  body.classList.add('quote-body');
+  moveInstrumentation(quoteCell, body);
 
-  if (paragraphs[0]) {
-    const blockquote = document.createElement('blockquote');
-    moveInstrumentation(paragraphs[0], blockquote);
-    blockquote.innerHTML = paragraphs[0].innerHTML;
-    paragraphs[0].replaceWith(blockquote);
+  // Quote text → <blockquote>
+  const blockquote = document.createElement('blockquote');
+  // richtext field delivers HTML; plain text field delivers a text node
+  const quoteHTML = quoteCell.innerHTML.trim();
+  const quoteText = quoteCell.textContent.trim();
+  blockquote.innerHTML = quoteHTML || `<p>${quoteText}</p>`;
+  body.append(blockquote);
+
+  // Author
+  const authorText = authorCell?.textContent.trim();
+  if (authorText) {
+    const p = document.createElement('p');
+    p.classList.add('quote-author');
+    p.textContent = authorText;
+    body.append(p);
   }
 
-  if (paragraphs[1]) paragraphs[1].classList.add('quote-author');
-  if (paragraphs[2]) paragraphs[2].classList.add('quote-role');
+  // Role / company
+  const roleText = roleCell?.textContent.trim();
+  if (roleText) {
+    const p = document.createElement('p');
+    p.classList.add('quote-role');
+    p.textContent = roleText;
+    body.append(p);
+  }
+
+  // Rebuild row cleanly
+  row.replaceChildren(...(hasPicture ? [imageCell, body] : [body]));
 }
