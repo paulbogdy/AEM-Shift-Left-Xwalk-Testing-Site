@@ -1,0 +1,30 @@
+.cf-promo {
+  padding: 56px 24px;
+  background: linear-gradient(135deg, var(--light-color) 0%, #eef2ff 100%);
+  border-radius: 24px;
+  text-align: center;
+}
+
+.cf-promo-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.cf-promo-description {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--dark-color);
+  max-width: 600px;
+  margin: 0 auto 28px;
+}
+
+.cf-promo-cta {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .cf-promo {
+    padding: 80px 40px;
+  }
+}
