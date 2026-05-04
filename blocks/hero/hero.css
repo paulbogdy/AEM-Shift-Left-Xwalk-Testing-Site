@@ -11,9 +11,34 @@
   align-items: center;
 }
 
+/* Full-bleed background image — direct child after JS hoists it */
+.hero > picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero > picture img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Gradient overlay — on ::after so it never interferes with picture */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 100%);
+  pointer-events: none;
+}
+
+/* Text content sits above both image and overlay */
 .hero > div {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -64,25 +89,6 @@
 .hero a.button.secondary:hover {
   border-color: var(--background-color);
   background-color: rgba(255, 255, 255, 0.15);
-}
-
-.hero picture {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-}
-
-.hero picture::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 100%);
-}
-
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
 @media (width >= 900px) {
