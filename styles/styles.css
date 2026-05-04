@@ -199,8 +199,8 @@ button {
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 6px;
-  padding: 0.6em 1.4em;
+  border-radius: 100px;
+  padding: 0.65em 1.6em;
   font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 600;

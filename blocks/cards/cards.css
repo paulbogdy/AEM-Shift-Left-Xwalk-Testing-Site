@@ -3,39 +3,45 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
 
 .cards > ul > li {
-  border: 1px solid var(--overlay-color, #dadada);
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: var(--background-color);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.cards > ul > li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(59, 99, 251, 0.14);
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+  padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* No-image cards: top accent bar + consistent padding so they don't look broken */
+/* No-image cards: top accent bar */
 .cards > ul > li:not(:has(.cards-card-image)) {
   border-top: 3px solid var(--link-color);
 }
 
 .cards > ul > li:not(:has(.cards-card-image)) .cards-card-body {
-  padding-top: 8px;
+  padding-top: 20px;
 }
 
-/* Pin the CTA link to the bottom of the card regardless of description length */
+/* Pin the CTA link to the bottom regardless of description length */
 .cards .cards-card-body p:has(> a):last-child {
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: 14px;
 }
 
 .cards .cards-card-image {
@@ -44,6 +50,7 @@
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  display: block;
 }

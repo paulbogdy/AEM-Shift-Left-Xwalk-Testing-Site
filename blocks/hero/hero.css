@@ -5,13 +5,15 @@
 
 .hero {
   position: relative;
-  padding: 80px 24px;
-  min-height: 480px;
+  padding: 56px 24px;
+  min-height: 380px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  border-radius: 0 0 40px 40px;
 }
 
-/* Full-bleed background image — direct child after JS hoists it */
+/* Full-bleed background image */
 .hero > picture {
   position: absolute;
   inset: 0;
@@ -25,17 +27,17 @@
   height: 100%;
 }
 
-/* Gradient overlay — on ::after so it never interferes with picture */
+/* Gradient overlay */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.2) 100%);
   pointer-events: none;
 }
 
-/* Text content sits above both image and overlay */
+/* Text content */
 .hero > div {
   position: relative;
   z-index: 2;
@@ -46,18 +48,18 @@
 
 .hero h1 {
   color: var(--background-color);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.875rem, 4.5vw, 3rem);
   line-height: 1.1;
-  margin: 0 0 20px;
-  max-width: 700px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 0 16px;
+  max-width: 680px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.88);
   font-size: var(--body-font-size-s);
-  max-width: 560px;
-  margin: 0 0 32px;
+  max-width: 520px;
+  margin: 0 0 28px;
   line-height: 1.6;
 }
 
@@ -78,22 +80,24 @@
 .hero a.button.primary:hover {
   background-color: transparent;
   color: var(--background-color);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .hero a.button.secondary {
   background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.55);
   color: var(--background-color);
 }
 
 .hero a.button.secondary:hover {
   border-color: var(--background-color);
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 @media (width >= 900px) {
   .hero {
-    padding: 120px 32px;
-    min-height: 580px;
+    padding: 80px 32px;
+    min-height: 460px;
+    border-radius: 0 0 56px 56px;
   }
 }
