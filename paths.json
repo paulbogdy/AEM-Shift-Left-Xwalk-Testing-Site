@@ -1,8 +1,10 @@
 {
   "mappings": [
-    "/content/aem-shift-left-testing/:/"
+    "/content/aem-shift-left-testing/:/",
+    "/content/dam/aem-shift-left-testing/fragments/:/fragments/"
   ],
   "includes": [
-    "/content/aem-shift-left-testing/"
+    "/content/aem-shift-left-testing/",
+    "/content/dam/aem-shift-left-testing/"
   ]
 }

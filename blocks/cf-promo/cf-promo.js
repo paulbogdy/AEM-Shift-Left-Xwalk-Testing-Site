@@ -1,38 +1,45 @@
 /**
- * Resolves the AEM author origin from the Universal Editor connection meta tag.
- * The tag content is in the form "aem:https://author-pXXX-eYYY.adobeaemcloud.com".
- * Falls back to an empty string so the fetch path stays relative (same-origin).
+ * Converts the AEM DAM link delivered by the reference field into the EDS
+ * overlay URL where json2html has pre-rendered the fragment as public HTML.
+ *
+ * e.g. /content/dam/aem-shift-left-testing/fragments/homepage-hero-promo.html
+ *   →  /fragments/homepage-hero-promo
+ *
+ * This fetch hits the EDS CDN — no auth required, works in every context
+ * (Universal Editor, author preview, published page).
  */
-function getAemOrigin() {
-  const meta = document.querySelector('meta[name="urn:adobe:aue:system:aemconnection"]');
-  if (!meta) return '';
-  // Strip the "aem:" scheme prefix — everything after the first colon+slashes.
-  const content = meta.getAttribute('content') || '';
-  const match = content.match(/^aem:(https?:\/\/.+)/);
-  return match ? match[1].replace(/\/$/, '') : '';
+function fragmentUrl(href) {
+  return href
+    .replace(/\.html$/, '')
+    .replace(/^\/content\/dam\/aem-shift-left-testing/, '');
 }
 
 export default async function decorate(block) {
   const link = block.querySelector('a');
   if (!link) return;
 
-  const cfPath = link.getAttribute('href').replace(/\.html$/, '');
-  const relative = cfPath.replace(/^\/?content\/dam\//, '');
-  const origin = getAemOrigin();
+  const url = fragmentUrl(link.getAttribute('href'));
 
   try {
-    const resp = await fetch(`${origin}/api/assets/${relative}.json`, {
-      credentials: 'include',
-    });
+    const resp = await fetch(url);
     if (!resp.ok) return;
-    const data = await resp.json();
-    const els = data?.properties?.elements || {};
-    const get = (name) => els[name]?.value || '';
+
+    const doc = new DOMParser().parseFromString(await resp.text(), 'text/html');
+
+    const title = doc.querySelector('.cf-promo-title')?.textContent.trim() ?? '';
+    const description = doc.querySelector('.cf-promo-description')?.textContent.trim() ?? '';
+    const ctaEl = doc.querySelector('.cf-promo-cta a');
+    const ctaText = ctaEl?.textContent.trim() ?? '';
+    const ctaHref = ctaEl?.getAttribute('href') ?? '';
+
+    if (!title && !description) return;
 
     block.innerHTML = `
-      <h2>${get('title')}</h2>
-      <p>${get('description')}</p>
-      <a class="button primary" href="${get('ctaLink')}">${get('ctaText')}</a>
+      <h2 class="cf-promo-title">${title}</h2>
+      <p class="cf-promo-description">${description}</p>
+      <p class="cf-promo-cta button-container">
+        <a class="button primary" href="${ctaHref}">${ctaText}</a>
+      </p>
     `;
   } catch (e) {
     // silently no-op — raw link stays as fallback
