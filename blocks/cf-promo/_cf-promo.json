@@ -1,0 +1,33 @@
+{
+  "definitions": [
+    {
+      "title": "CF Promo",
+      "id": "cf-promo",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "aem-shift-left-testing/components/blocks/cf-promo",
+            "template": {
+              "name": "CF Promo",
+              "model": "cf-promo"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "cf-promo",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "reference",
+          "label": "Content Fragment",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
