@@ -45,7 +45,6 @@ export default function decorate(block) {
         }
 
         const text = el.textContent.trim();
-        const paras = infoCell.querySelectorAll('p');
 
         // First <p> after heading = title/role
         // Second <p> = department

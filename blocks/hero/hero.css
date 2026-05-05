@@ -34,7 +34,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: linear-gradient(135deg, rgb(0 0 0 / 62%) 0%, rgb(0 0 0 / 20%) 100%);
   pointer-events: none;
 }
 
@@ -53,11 +53,11 @@
   line-height: 1.1;
   margin: 0 0 16px;
   max-width: 680px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 2px 8px rgb(0 0 0 / 25%);
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgb(255 255 255 / 88%);
   font-size: var(--body-font-size-s);
   max-width: 520px;
   margin: 0 0 28px;
@@ -81,18 +81,18 @@
 .hero a.button.primary:hover {
   background-color: transparent;
   color: var(--background-color);
-  border-color: rgba(255, 255, 255, 0.8);
+  border-color: rgb(255 255 255 / 80%);
 }
 
 .hero a.button.secondary {
   background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.55);
+  border-color: rgb(255 255 255 / 55%);
   color: var(--background-color);
 }
 
 .hero a.button.secondary:hover {
   border-color: var(--background-color);
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgb(255 255 255 / 12%);
 }
 
 @media (width >= 900px) {

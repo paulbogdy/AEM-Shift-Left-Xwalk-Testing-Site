@@ -51,31 +51,31 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "name",
+          "name": "info_name",
           "label": "Full Name"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "jobTitle",
+          "name": "info_role",
           "label": "Job Title"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "department",
+          "name": "info_department",
           "label": "Department"
         },
         {
           "component": "richtext",
           "valueType": "string",
-          "name": "bio",
+          "name": "info_bio",
           "label": "Bio"
         },
         {
           "component": "aem-content",
           "valueType": "string",
-          "name": "linkedinUrl",
+          "name": "info_linkedinUrl",
           "label": "LinkedIn URL"
         }
       ]

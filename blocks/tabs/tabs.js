@@ -44,6 +44,19 @@ export default function decorate(block) {
     panels.push(panel);
   });
 
+  function activateTab(targetBtn, nav, panes) {
+    nav.querySelectorAll('[role="tab"]').forEach((btn, i) => {
+      const isSelected = btn === targetBtn;
+      btn.setAttribute('aria-selected', String(isSelected));
+      btn.setAttribute('tabindex', isSelected ? '0' : '-1');
+      const pane = panes[i];
+      if (pane) {
+        if (isSelected) pane.removeAttribute('hidden');
+        else pane.setAttribute('hidden', '');
+      }
+    });
+  }
+
   // Click + keyboard handling
   tabList.addEventListener('click', (e) => {
     const button = e.target.closest('[role="tab"]');
@@ -70,17 +83,4 @@ export default function decorate(block) {
   });
 
   block.replaceChildren(tabList, ...panels);
-}
-
-function activateTab(button, tabList, panels) {
-  tabList.querySelectorAll('[role="tab"]').forEach((btn, i) => {
-    const isSelected = btn === button;
-    btn.setAttribute('aria-selected', String(isSelected));
-    btn.setAttribute('tabindex', isSelected ? '0' : '-1');
-    const panel = panels[i];
-    if (panel) {
-      if (isSelected) panel.removeAttribute('hidden');
-      else panel.setAttribute('hidden', '');
-    }
-  });
 }

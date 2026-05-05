@@ -41,7 +41,7 @@
   margin: 0;
 }
 
-.teaser .teaser-body p:not(.teaser-eyebrow):not(:has(a)) {
+.teaser .teaser-body p:not(.teaser-eyebrow, :has(a)) {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-color);
@@ -63,7 +63,7 @@
   background-color: var(--link-hover-color);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .teaser {
     flex-direction: row;
     align-items: center;

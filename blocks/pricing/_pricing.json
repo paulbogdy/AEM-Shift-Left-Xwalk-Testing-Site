@@ -37,17 +37,17 @@
       "fields": [
         {
           "component": "text",
-          "name": "tierName",
+          "name": "tier_name",
           "label": "Tier Name"
         },
         {
           "component": "text",
-          "name": "price",
+          "name": "tier_price",
           "label": "Price (e.g. $79/mo)"
         },
         {
           "component": "text",
-          "name": "period",
+          "name": "tier_period",
           "label": "Billing Period"
         },
         {
@@ -63,7 +63,7 @@
         },
         {
           "component": "aem-content",
-          "name": "ctaLink",
+          "name": "cta",
           "label": "CTA Link"
         },
         {

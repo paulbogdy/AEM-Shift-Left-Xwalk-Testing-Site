@@ -1,5 +1,5 @@
 .cta {
-  background-color: var(--link-color, #0066cc);
+  background-color: var(--link-color, #06c);
   color: #fff;
   text-align: center;
   padding: 48px 24px;
@@ -23,7 +23,7 @@
 .cta p:not(.button-container) {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(255 255 255 / 90%);
   margin: 0 0 24px;
 }
 
@@ -48,7 +48,7 @@
 
 .cta a.button.primary {
   background-color: #fff;
-  color: var(--link-color, #0066cc);
+  color: var(--link-color, #06c);
   border-color: #fff;
 }
 
@@ -60,34 +60,12 @@
 .cta a.button.secondary {
   background-color: transparent;
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgb(255 255 255 / 60%);
 }
 
 .cta a.button.secondary:hover {
   border-color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Dark variant */
-.cta.dark {
-  background-color: #1a1a2e;
-  color: #fff;
-}
-
-.cta.dark h2,
-.cta.dark h3 {
-  color: #fff;
-}
-
-.cta.dark a.button.primary {
-  background-color: var(--link-color, #0066cc);
-  color: #fff;
-  border-color: var(--link-color, #0066cc);
-}
-
-.cta.dark a.button.primary:hover {
-  background-color: transparent;
-  color: var(--link-color, #0066cc);
+  background-color: rgb(255 255 255 / 10%);
 }
 
 /* Light variant */
@@ -106,28 +84,51 @@
 }
 
 .cta.light a.button.primary {
-  background-color: var(--link-color, #0066cc);
+  background-color: var(--link-color, #06c);
   color: #fff;
-  border-color: var(--link-color, #0066cc);
-}
-
-.cta.light a.button.primary:hover {
-  background-color: var(--link-hover-color, #0055aa);
-  border-color: var(--link-hover-color, #0055aa);
+  border-color: var(--link-color, #06c);
 }
 
 .cta.light a.button.secondary {
   background-color: transparent;
-  color: var(--link-color, #0066cc);
-  border-color: var(--link-color, #0066cc);
+  color: var(--link-color, #06c);
+  border-color: var(--link-color, #06c);
 }
 
-.cta.light a.button.secondary:hover {
-  background-color: var(--link-color, #0066cc);
+/* Dark variant */
+.cta.dark {
+  background-color: #1a1a2e;
   color: #fff;
 }
 
-@media (min-width: 900px) {
+.cta.dark h2,
+.cta.dark h3 {
+  color: #fff;
+}
+
+.cta.dark a.button.primary {
+  background-color: var(--link-color, #06c);
+  color: #fff;
+  border-color: var(--link-color, #06c);
+}
+
+/* Hover states */
+.cta.light a.button.primary:hover {
+  background-color: var(--link-hover-color, #05a);
+  border-color: var(--link-hover-color, #05a);
+}
+
+.cta.light a.button.secondary:hover {
+  background-color: var(--link-color, #06c);
+  color: #fff;
+}
+
+.cta.dark a.button.primary:hover {
+  background-color: transparent;
+  color: var(--link-color, #06c);
+}
+
+@media (width >= 900px) {
   .cta {
     padding: 64px 40px;
   }

@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--link-color, #0066cc);
+  background-color: var(--link-color, #06c);
   color: #fff;
   padding: 10px 48px;
   text-align: center;

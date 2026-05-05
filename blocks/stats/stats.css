@@ -23,13 +23,13 @@
   border-radius: 24px;
   padding: 36px 24px 32px;
   text-align: center;
-  box-shadow: 0 2px 20px rgba(59, 99, 251, 0.08);
+  box-shadow: 0 2px 20px rgb(59 99 251 / 8%);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .stats-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 36px rgba(59, 99, 251, 0.16);
+  box-shadow: 0 10px 36px rgb(59 99 251 / 16%);
 }
 
 /* Oval/pill badge around the number */
@@ -37,7 +37,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(59, 99, 251, 0.07);
+  background: rgb(59 99 251 / 7%);
   border-radius: 100px;
   padding: 12px 32px;
   font-family: var(--heading-font-family);

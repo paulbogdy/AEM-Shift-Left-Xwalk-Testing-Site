@@ -29,12 +29,13 @@ export default function decorate(block) {
     const paragraphs = [...bodyCell.querySelectorAll('p')];
 
     // Eyebrow: first short <p> that appears before the heading, with no links
+    const allContent = [...bodyCell.querySelectorAll('h1,h2,h3,h4,p')];
     const eyebrow = paragraphs.find((p) => {
       const text = p.textContent.trim();
       if (!text || text.length > 80 || p.querySelector('a')) return false;
       if (!heading) return false;
       // p must come before the heading in DOM order
-      return !!(p.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_FOLLOWING);
+      return allContent.indexOf(p) < allContent.indexOf(heading);
     });
     if (eyebrow) eyebrow.classList.add('teaser-eyebrow');
 

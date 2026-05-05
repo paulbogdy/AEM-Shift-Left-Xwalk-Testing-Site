@@ -56,13 +56,13 @@
   margin-bottom: 2px;
 }
 
-@media (min-width: 700px) {
+@media (width >= 700px) {
   .list-items {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .list {
     padding: 64px 32px;
   }

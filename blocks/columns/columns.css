@@ -13,10 +13,6 @@
   order: 1;
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
 /* ─────────────────────────────────────────────
    Image column
 ───────────────────────────────────────────── */
@@ -24,13 +20,17 @@
   position: relative;
 }
 
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
 .columns-img-col picture {
   display: block;
   border-radius: 20px;
   overflow: hidden;
   box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.08),
-    0 20px 56px rgba(0, 0, 0, 0.1);
+    0 4px 16px rgb(0 0 0 / 8%),
+    0 20px 56px rgb(0 0 0 / 10%);
 }
 
 .columns-img-col img {
@@ -45,7 +45,7 @@
   position: absolute;
   inset: 12px -12px -12px 12px;
   border-radius: 20px;
-  background: rgba(59, 99, 251, 0.07);
+  background: rgb(59 99 251 / 7%);
   z-index: -1;
 }
 
@@ -77,16 +77,6 @@
   margin-bottom: 0;
 }
 
-/* Inline eyebrow — short all-caps <p> before the heading */
-.columns-text-col p:first-child:not(:last-child) {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--link-color);
-  margin-bottom: 10px;
-}
-
 /* ─────────────────────────────────────────────
    3-column: feature grid
 ───────────────────────────────────────────── */
@@ -107,12 +97,27 @@
   margin-bottom: 0;
 }
 
+/* Inline eyebrow — short all-caps <p> before the heading */
+.columns-text-col p:first-child:not(:last-child) {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--link-color);
+  margin-bottom: 10px;
+}
+
 /* ─────────────────────────────────────────────
    Desktop: side by side
 ───────────────────────────────────────────── */
 @media (width >= 900px) {
   .columns {
     padding: 80px 32px;
+  }
+
+  .columns-3-cols > div {
+    align-items: flex-start;
+    gap: 28px;
   }
 
   .columns > div {
@@ -129,12 +134,6 @@
   /* Image column slightly wider than text in a 2-col layout */
   .columns-2-cols > div > .columns-img-col {
     flex: 0 0 52%;
-  }
-
-  /* 3-col: tighter gap, top-align */
-  .columns-3-cols > div {
-    align-items: flex-start;
-    gap: 28px;
   }
 }
 

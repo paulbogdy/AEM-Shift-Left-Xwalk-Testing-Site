@@ -23,7 +23,7 @@
 }
 
 .pricing-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
 }
 
 .pricing-card h2,
@@ -84,26 +84,26 @@
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  background-color: var(--link-color, #0066cc);
+  background-color: var(--link-color, #06c);
   color: #fff;
   transition: background-color 0.2s ease;
   box-sizing: border-box;
 }
 
 .pricing-cta:hover {
-  background-color: var(--link-hover-color, #0055aa);
+  background-color: var(--link-hover-color, #05a);
 }
 
 /* Featured card */
 .pricing-card.pricing-featured {
-  border-color: var(--link-color, #0066cc);
+  border-color: var(--link-color, #06c);
   border-width: 2px;
-  box-shadow: 0 8px 32px rgba(0, 102, 204, 0.15);
+  box-shadow: 0 8px 32px rgb(0 102 204 / 15%);
   transform: scale(1.02);
   position: relative;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .pricing {
     padding: 64px 32px;
   }

@@ -34,17 +34,17 @@
         },
         {
           "component": "text",
-          "name": "eyebrow",
+          "name": "body_eyebrow",
           "label": "Eyebrow Label"
         },
         {
           "component": "text",
-          "name": "heading",
+          "name": "body_heading",
           "label": "Heading"
         },
         {
           "component": "richtext",
-          "name": "text",
+          "name": "body_text",
           "label": "Body Text",
           "valueType": "string"
         },
@@ -55,7 +55,7 @@
         },
         {
           "component": "aem-content",
-          "name": "ctaLink",
+          "name": "cta",
           "label": "CTA Link"
         },
         {

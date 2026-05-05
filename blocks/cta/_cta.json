@@ -22,12 +22,12 @@
       "fields": [
         {
           "component": "text",
-          "name": "heading",
+          "name": "body_heading",
           "label": "Heading"
         },
         {
           "component": "richtext",
-          "name": "text",
+          "name": "body_text",
           "label": "Supporting Text",
           "valueType": "string"
         },
@@ -38,7 +38,7 @@
         },
         {
           "component": "aem-content",
-          "name": "primaryCtaLink",
+          "name": "primaryCta",
           "label": "Primary CTA Link"
         },
         {
@@ -48,7 +48,7 @@
         },
         {
           "component": "aem-content",
-          "name": "secondaryCtaLink",
+          "name": "secondaryCta",
           "label": "Secondary CTA Link"
         },
         {
